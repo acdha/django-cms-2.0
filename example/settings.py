@@ -118,13 +118,13 @@ INSTALLED_APPS = (
     'reversion',
     #'example.categories',
     #'debug_toolbar',
-    #'south',
+    'south',
     # sample application
     'example.sampleapp',
     #'store',
 )
 
-LANGUAGE_CODE = "de"
+LANGUAGE_CODE = "en"
 
 gettext = lambda s: s
 
