@@ -1,9 +1,9 @@
+from django.conf import settings
+from django.contrib.sites.models import Site
 from django.contrib.admin.views.main import ChangeList, ALL_VAR, IS_POPUP_VAR,\
     ORDER_TYPE_VAR, ORDER_VAR, SEARCH_VAR
 from cms.models import Title, PagePermission, Page, PageModerator
-from cms import settings
 from cms.utils import get_language_from_request, find_children
-from django.contrib.sites.models import Site
 from cms.utils.permissions import get_user_sites_queryset
 from cms.exceptions import NoHomeFound
 from cms.models.moderatormodels import MASK_PAGE, MASK_CHILDREN,\
@@ -163,18 +163,17 @@ class CMSChangeList(ChangeList):
                 else:
                     page.childrens = []
         
-        
         # TODO: OPTIMIZE!!
         titles = Title.objects.filter(page__in=ids)
         for page in all_pages:# add the title and slugs and some meta data
-            page.languages_cache = []
+            page.title_cache = {}
+            page.all_languages = []
             for title in titles:
                 if title.page_id == page.pk:
-                    if title.language == lang:
-                        page.title_cache = title
-                    if not title.language in page.languages_cache:
-                        page.languages_cache.append(title.language)
-        
+                    page.title_cache[title.language] = title
+                    if not title.language in page.all_languages:
+                        page.all_languages.append(title.language)
+            page.all_languages.sort()
         self.root_pages = root_pages
         
     def get_items(self):
