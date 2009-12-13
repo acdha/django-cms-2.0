@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DJANGO-CMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-13 10:54+0100\n"
-"PO-Revision-Date: 2009-11-16 15:15+0500\n"
+"POT-Creation-Date: 2009-11-21 23:30+0100\n"
+"PO-Revision-Date: 2009-11-25 11:12+0500\n"
 "Last-Translator: Lapuhov Alex <lapuhov.alex@gmail.com>\n"
 "Language-Team: DJANGO-CMS-russian <lapuhov.alex@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Заголовок меню"
 
 #: admin/forms.py:82
 msgid "Overwrite what is displayed in the menu"
-msgstr "Переписать то, что будет отображено в меню."
+msgstr "То, что будет отображено в меню."
 
 #: admin/forms.py:83
 msgid "Page Title"
@@ -181,28 +181,28 @@ msgstr "Право на добавление пользователя требу
 msgid "To add permissions you also need to edit them!"
 msgstr "Для добавления прав доступа вы также должны изменять их!"
 
-#: admin/pageadmin.py:104
-#: admin/pageadmin.py:120
+#: admin/pageadmin.py:102
+#: admin/pageadmin.py:118
 msgid "Hidden"
 msgstr "Скрыто"
 
-#: admin/pageadmin.py:115
+#: admin/pageadmin.py:113
 msgid "Basic Settings"
 msgstr "Основные настройки"
 
-#: admin/pageadmin.py:118
+#: admin/pageadmin.py:116
 msgid "Note: This page reloads if you change the selection. Save it first."
-msgstr "Страница будет перезагружена, если изменить выделение. Сохраните её сначала."
+msgstr "Страница будет перезагружена, если изменить выбор. Сохраните её сначала."
 
-#: admin/pageadmin.py:124
+#: admin/pageadmin.py:122
 msgid "Advanced Settings"
 msgstr "Расширенные настройки"
 
-#: admin/pageadmin.py:133
+#: admin/pageadmin.py:131
 msgid "SEO Settings"
 msgstr "Настройки SEO "
 
-#: admin/pageadmin.py:496
+#: admin/pageadmin.py:494
 msgid "higher"
 msgstr "выше"
 
@@ -1011,7 +1011,7 @@ msgstr "Ваш адрес"
 msgid "Calculate route"
 msgstr "Вычислить путь"
 
-#: plugins/inherit/cms_plugins.py:26
+#: plugins/inherit/cms_plugins.py:17
 msgid "Inherit Plugins from Page"
 msgstr "Наследовать плагины от страницы"
 
@@ -1082,7 +1082,7 @@ msgstr "изображение"
 #: plugins/picture/models.py:21
 #: plugins/picture/models.py:22
 msgid "if present image will be clickable"
-msgstr "если выбрано, на изображение можно кликнуть"
+msgstr "если указано, клик по изображению приведёт к переходу по ссылке"
 
 #: plugins/picture/models.py:23
 #: plugins/picture/migrations/0001_initial.py:19
@@ -1103,10 +1103,11 @@ msgstr "дополнительное описание изображения"
 
 #: plugins/picture/models.py:25
 msgid "side"
-msgstr "сторона"
+msgstr "расположение"
 
 #: plugins/snippet/cms_plugins.py:12
-#: plugins/snippet/models.py:30
+#: plugins/snippet/models.py:24
+#: plugins/snippet/models.py:32
 msgid "Snippet"
 msgstr "Snippet"
 
@@ -1123,6 +1124,11 @@ msgstr "HTML"
 #: plugins/snippet/models.py:15
 msgid "Enter a template (i.e. \"snippets/plugin_xy.html\") which will be rendered. "
 msgstr "Введите имя шаблона (например \"snippets/plugin_xy.html\") который должен отображаться. "
+
+#: plugins/snippet/models.py:25
+#, fuzzy
+msgid "Snippets"
+msgstr "Snippet"
 
 #: plugins/teaser/cms_plugins.py:9
 msgid "Teaser"
@@ -1813,18 +1819,28 @@ msgstr "Убрать модерацию непосредственных пот�
 msgid "Unbind descendants moderation"
 msgstr "Убрать модерацию потомков"
 
-#: templatetags/cms_tags.py:393
+#: templatetags/cms_tags.py:397
+#: templatetags/cms_tags.py:612
 #, python-format
 msgid "Reverse ID not found on %(domain)s"
 msgstr "Обратный ID не найден для %(domain)s"
 
-#: templatetags/cms_tags.py:394
+#: templatetags/cms_tags.py:398
 #, python-format
 msgid ""
 "A page_id_url template tag didn't found a page with the reverse_id %(reverse_id)s\n"
 "The url of the page was: http://%(host)s%(path)s"
 msgstr ""
 "Тег page_id_url не найден на странице reverse_id %(reverse_id)s\n"
+"Url страницы был: http://%(host)s%(path)s"
+
+#: templatetags/cms_tags.py:613
+#, python-format
+msgid ""
+"A show_placeholder_by_id template tag didn't found a page with the reverse_id %(reverse_id)s\n"
+"The url of the page was: http://%(host)s%(path)s"
+msgstr ""
+"Тег show_placeholder_by_id не найден на странице с reverse_id %(reverse_id)s\n"
 "Url страницы был: http://%(host)s%(path)s"
 
 #: utils/moderator.py:84
@@ -1854,12 +1870,4 @@ msgstr "CMS - ваш аккаунт изменён."
 #~ msgstr "Revisions"
 #~ msgid "Wanted language has not been translated yet."
 #~ msgstr "Для требуемого языка ещё нет перевода."
-#~ msgid ""
-#~ "A show_placeholder_by_id template tag didn't found a page with the "
-#~ "reverse_id %(reverse_id)s\n"
-#~ "The url of the page was: http://%(host)s%(path)s"
-#~ msgstr ""
-#~ "Тег show_placeholder_by_id не найден на странице с reverse_id %"
-#~ "(reverse_id)s\n"
-#~ "Url страницы был: http://%(host)s%(path)s"
 
